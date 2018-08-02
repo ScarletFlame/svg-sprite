@@ -25,7 +25,7 @@ var should = require('should'),
     imageDiff = require('image-diff'),
     mustache = require('mustache'),
     execFile = require('child_process').execFile,
-    phantomjs = require('phantomjs-prebuilt').path,
+    // phantomjs = require('phantomjs-prebuilt').path,
     capturePhantomScript = path.resolve(__dirname, 'script/capture.phantom.js'),
     sass = require('node-sass'),
     less = require('less'),
@@ -100,7 +100,7 @@ function writeFile(file, content) {
  * @param {Function} cb                Function
  */
 function capturePhantom(src, target, cb) {
-    execFile(phantomjs, [capturePhantomScript, src, target], function (err, stdout, stderr) {
+    /*execFile(phantomjs, [capturePhantomScript, src, target], function (err, stdout, stderr) {
         if (err) {
             cb(err);
         } else if (stdout.length > 0) {
@@ -110,7 +110,7 @@ function capturePhantom(src, target, cb) {
         } else {
             cb(new Error('PhantomJS couldn\'t capture "' + src + '"'));
         }
-    });
+    });*/
 }
 
 /**
